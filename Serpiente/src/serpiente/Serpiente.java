@@ -1,6 +1,6 @@
 package serpiente;
 
-//punto 2
+//punto 1
 
 import java.util.Scanner;
 
@@ -25,7 +25,7 @@ public class Serpiente {
     static void sobrevive(int[] arr, int min) {
         int n = arr.length;
         int level = 0;
-        boolean printReverse = false;
+        boolean reverse = false;
         boolean par = true;
         int suma = 0;
 
@@ -34,7 +34,7 @@ public class Serpiente {
             int end = Math.min((1 << (level + 1)) - 1, n);
 
             for (int i = start; i < end; i++) {
-                if (printReverse) {
+                if (reverse) {
                     if (par) {
                         suma += arr[end - 1 - (i - start)];
                     } 
@@ -47,7 +47,7 @@ public class Serpiente {
             }
 
             level++;
-            printReverse = !printReverse;
+            reverse = !reverse;
             
             
         }

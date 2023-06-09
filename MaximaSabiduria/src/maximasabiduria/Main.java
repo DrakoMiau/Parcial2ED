@@ -1,20 +1,47 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package maximasabiduria;
 
-/**
- *
- * @author USUARIO
- */
+//punto 2
+import java.util.Scanner;
+
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner scan = new Scanner(System.in);
+        String[] input = scan.nextLine().split(" ");
+        int[] arr = new int[input.length];
+//        int [] arrPrueba = {1, 29, 3, 4, 5, 6, 7, 9};  //arreglo de prueba
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = Integer.parseInt(input[i]);
+        }
+        
+        sumaMayor(arr);
+
     }
-    
+
+    static void sumaMayor(int[] arr) {
+        int n = arr.length;
+        int level = 0;
+        int suma = 0;
+        int sumaMayor = 0;
+
+        while ((1 << level) - 1 < n) {
+            int start = (1 << level) - 1;
+            int end = Math.min((1 << (level + 1)) - 1, n);
+
+            for (int i = start; i < end; i++) {
+                suma += arr[i];
+            }
+            
+            if (suma > sumaMayor) {
+                sumaMayor = suma;
+            }
+            
+            suma = 0;
+            
+            level++;
+        }
+        
+        System.out.print(sumaMayor);
+    }
+
 }
