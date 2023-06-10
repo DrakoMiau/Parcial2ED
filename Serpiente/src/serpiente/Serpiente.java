@@ -28,7 +28,8 @@ public class Serpiente {
         boolean reverse = false;
         boolean par = true;
         int suma = 0;
-
+        //Se hace un corrimiento del bit 1 a la izquierda dependiendo del nivel en el que se encuentre
+        //Para poder referirse a las posiciones del arreglo en ese nivel
         while ((1 << level) - 1 < n) {
             int start = (1 << level) - 1;
             int end = Math.min((1 << (level + 1)) - 1, n);
