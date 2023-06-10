@@ -9,7 +9,6 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         String[] input = scan.nextLine().split(" ");
         int[] arr = new int[input.length];
-//        int [] arrPrueba = {1, 29, 3, 4, 5, 6, 7, 9};  //arreglo de prueba
         for (int i = 0; i < arr.length; i++) {
             arr[i] = Integer.parseInt(input[i]);
         }
