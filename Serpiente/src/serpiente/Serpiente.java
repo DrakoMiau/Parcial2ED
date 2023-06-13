@@ -16,8 +16,6 @@ public class Serpiente {
         }
 //        //Ingreso de nuestra cantidad minima de calorias
         int cMin = scan.nextInt();
-        // arreglo de prueba
-        //int[] miArreglo = {1, 2, 3, 7, 6, 5, 4, 9, 8, 7, 6};
         sobrevive(calorias, cMin);
 
     }
